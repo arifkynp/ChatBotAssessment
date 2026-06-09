@@ -15,8 +15,7 @@ export type TSidebarWrapperProps = {
 };
 
 export default function SidebarWrapper(props: Readonly<TSidebarWrapperProps>) {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [railCollapsed, setRailCollapsed] = createSignal(readRailCollapsed());
+  const [railCollapsed] = createSignal(readRailCollapsed());
   const [railWidth, setRailWidth] = createSignal(readRailWidth());
   const railEffectiveWidth = createMemo<number>(() => (railCollapsed() ? RAIL_WIDTH_COLLAPSED_PX : railWidth()));
 
