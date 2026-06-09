@@ -1,16 +1,17 @@
 /// <reference types="vitest/config" />
 import tailwindcss from '@tailwindcss/vite';
-import path from 'path/win32';
 import devtools from 'solid-devtools/vite';
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 import solidSvg from 'vite-plugin-solid-svg';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { fileURLToPath } from 'url'; // <-- Add this
 
 export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
-      "~": path.resolve(__dirname, "./src"),
+      // This forces forward slashes and plays nicely with Rolldown/Vite
+      '~': fileURLToPath(new URL('./src', import.meta.url)),
     },
     extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
   },
