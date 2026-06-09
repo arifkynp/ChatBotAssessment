@@ -1,13 +1,7 @@
 import { useNavigate } from '@solidjs/router';
 import { IconLogout, IconMonitor }  from '~/assets/Icons/Icons';
 
-export type TNavbarWrapperProps = {
-    userProfile: {
-        image: string;
-    };
-}
-
-export default function NavbarWrapper(props: Readonly<TNavbarWrapperProps>) {
+export default function NavbarWrapper() {
 
   const navigate = useNavigate();
 

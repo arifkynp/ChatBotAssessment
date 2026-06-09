@@ -21,14 +21,9 @@ export default function Chat() {
     }
   });
 
-  const userProfile = {
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=60",
-  };
-
   return (
     <div class="h-screen bg-background flex font-sans text-foreground overflow-hidden relative">
-      <NavbarWrapper userProfile={userProfile} />
+      <NavbarWrapper />
 
       <div class="flex-1 flex flex-col overflow-hidden">
         <div class="flex flex-1 overflow-hidden size-full">
