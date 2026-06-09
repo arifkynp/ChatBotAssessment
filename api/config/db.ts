@@ -3,8 +3,8 @@ import { env } from "process";
 
 export const db = mysql.createPool({
   host: "localhost",
-  user: "root",
-  password: env.DB_PASSWORD || "password",
+  user: env.DB_USER",
+  password: env.DB_PASSWORD,
   database: "chatbot_platform",
   waitForConnections: true,
   connectionLimit: 10,
